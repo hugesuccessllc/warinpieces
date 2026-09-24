@@ -97,10 +97,9 @@ def report_word_diff(ops)
   return puts "[*] Wording matches source exactly" if mismatches.empty?
 
   puts "[!] Wording differs from source:"
-  ops.each_cons(1) # no-op, keeps structure simple
   i = 0
   while i < ops.length
-    tag, word = ops[i]
+    tag = ops[i][0]
     if tag == :same
       i += 1
       next
